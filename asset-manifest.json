@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/burgers-shop-version2/static/css/main.e8c37f10.css",
-    "main.js": "/burgers-shop-version2/static/js/main.51fa2659.js",
+    "main.js": "/burgers-shop-version2/static/js/main.4211acc8.js",
     "static/js/787.15ddc0cf.chunk.js": "/burgers-shop-version2/static/js/787.15ddc0cf.chunk.js",
     "static/media/empty-cart.png": "/burgers-shop-version2/static/media/empty-cart.db905d1f4b063162f25b.png",
     "static/media/404.svg": "/burgers-shop-version2/static/media/404.dae7af4892f2a3abe805a174178919f2.svg",
@@ -9,11 +9,11 @@
     "index.html": "/burgers-shop-version2/index.html",
     "static/media/cancel.svg": "/burgers-shop-version2/static/media/cancel.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "main.e8c37f10.css.map": "/burgers-shop-version2/static/css/main.e8c37f10.css.map",
-    "main.51fa2659.js.map": "/burgers-shop-version2/static/js/main.51fa2659.js.map",
+    "main.4211acc8.js.map": "/burgers-shop-version2/static/js/main.4211acc8.js.map",
     "787.15ddc0cf.chunk.js.map": "/burgers-shop-version2/static/js/787.15ddc0cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8c37f10.css",
-    "static/js/main.51fa2659.js"
+    "static/js/main.4211acc8.js"
   ]
 }
