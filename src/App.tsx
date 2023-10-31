@@ -13,7 +13,7 @@ function App() {
     return (
         <Routes>
             <Route path={'/'} element={<MainLayout/>}>
-                <Route path={'/burgers-shop'} element={<Home/>}/>
+                <Route path={'/burgers-shop-version2/'} element={<Home/>}/>
                 <Route path={''} element={<Home/>}/>
                 <Route path={'/burger/:id'} element={<BurgerPage/>}/>
                 <Route path={'/cart'} element={<Cart/>}/>
