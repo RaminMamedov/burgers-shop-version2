@@ -14,7 +14,7 @@ function App() {
         <Routes>
             <Route path={'/'} element={<MainLayout/>}>
                 <Route path={'/burgers-shop-version2/'} element={<Home/>}/>
-                <Route path={''} element={<Home/>}/>
+                <Route index element={<Home/>}/>
                 <Route path={'/burger/:id'} element={<BurgerPage/>}/>
                 <Route path={'/cart'} element={<Cart/>}/>
                 <Route path={'/*'} element={<NotFound/>}/>
