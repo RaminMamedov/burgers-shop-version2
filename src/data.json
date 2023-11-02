@@ -1,0 +1,110 @@
+{
+    "burgers": [
+        {
+            "id": "0",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Ranger-Burger",
+            "category": 1,
+            "types": [
+                0,
+                1
+            ],
+            "price": 300,
+            "rating": 3
+        },
+        {
+            "id": "1",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Hamburger",
+            "category": 3,
+            "types": [
+                0,
+                1
+            ],
+            "price": 350,
+            "rating": 5
+        },
+        {
+            "id": "2",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Fish-Burger",
+            "category": 4,
+            "types": [
+                0,
+                1
+            ],
+            "price": 400,
+            "rating": 3
+        },
+        {
+            "id": "3",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Chicken-Burger",
+            "category": 2,
+            "types": [
+                0,
+                1
+            ],
+            "price": 450,
+            "rating": 5
+        },
+        {
+            "id": "4",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Vegan-Burger",
+            "category": 5,
+            "types": [
+                0
+            ],
+            "price": 500,
+            "rating": 3
+        },
+        {
+            "id": "5",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Vegan-Paradise",
+            "category": 5,
+            "types": [
+                0
+            ],
+            "price": 400,
+            "rating": 3
+        },
+        {
+            "id": "6",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "MacChicken",
+            "category": 2,
+            "types": [
+                0,
+                1
+            ],
+            "price": 350,
+            "rating": 5
+        },
+        {
+            "id": "7",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Rocket-Chicken",
+            "category": 2,
+            "types": [
+                0,
+                1
+            ],
+            "price": 600,
+            "rating": 5
+        },
+        {
+            "id": "8",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg",
+            "title": "Beef-King",
+            "category": 3,
+            "types": [
+                0,
+                1
+            ],
+            "price": 550,
+            "rating": 5
+        }
+    ]
+}

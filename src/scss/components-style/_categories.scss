@@ -1,0 +1,35 @@
+@import 'src/scss/variables';
+@import 'src/scss/libs/normalize';
+
+.categories {
+  ul {
+    display: flex;
+
+    li {
+      background-color: #F9F4FB;
+      padding: 13px 30px;
+      border-radius: 30px;
+      margin-right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      margin-bottom: 10px;
+      @include noselect();
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: #C3894B;
+        }
+      }
+
+      &:active {
+        background-color: darken(#f9f9f9, 5%);
+      }
+
+      &.active {
+        background-color: #282828;
+        color: #fff;
+      }
+    }
+  }
+}
