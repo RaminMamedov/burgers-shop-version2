@@ -2,27 +2,24 @@ import React, {useState} from "react";
 import {cartActions} from "../redux/cartSlice/cartSlice";
 import {CartItem as CartItemType} from '../redux/cartSlice/cartTypes';
 import {useAppDispatch} from "../customHooks/useAppDispatch";
-import {ConfirmModal} from "../components/ConfirmModal";
+import {ConfirmModal} from "../components";
 
 type CartItemProps = {
-    id: string;
-    title: string;
-    type: string;
-    price: number;
-    count: number;
-    imageUrl: string;
+    id: string
+    title: string
+    type: string
+    price: number
+    count: number
+    imageUrl: string
+    updatePredictedTotalPrice: (amountToRemove: number) => void
 };
 
-export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count, imageUrl}) => {
+export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count, imageUrl, updatePredictedTotalPrice}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const dispatch = useAppDispatch();
 
     const onClickPlus = () => {
-        dispatch(
-            cartActions.addItem({
-                id,
-            } as CartItemType),
-        );
+        dispatch(cartActions.addItem({id} as CartItemType));
     };
 
     const onClickMinus = () => {
@@ -30,6 +27,7 @@ export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count
     };
 
     const onClickRemove = () => {
+        updatePredictedTotalPrice(price * count);
         setIsModalVisible(true);
     };
 

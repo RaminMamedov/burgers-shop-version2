@@ -1,21 +1,19 @@
 import React, {useCallback, useEffect} from 'react';
-import {Categories} from "../components/Categories";
-import {Sort} from "../components/Sort";
-import {BurgersSkeleton} from "../components/Burgers/Burgers-Skeleton";
-import {Burgers} from "../components/Burgers/Burgers";
-import {Pagination} from "../components/Pagination/Pagination";
+import {Burgers, BurgersSkeleton, Categories, Pagination, Sort} from "../components";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../customHooks/useAppDispatch";
 import {filterActions} from "../redux/filterSlice/filterSlice";
 import {fetchBurgers} from "../redux/burgersSlice/asyncActionsBurger";
 import {selectFilter} from "../redux/filterSlice/selectFilter";
 import {selectBurgers} from "../redux/burgersSlice/selectBurgers";
+import {useScrollToTop} from "../customHooks/useScrollToTop";
 
 
 export const Home = () => {
     const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
     const {items, status} = useSelector(selectBurgers);
     const dispatch = useAppDispatch();
+    useScrollToTop(status);
 
 
     const burgers = items.map((el) => <Burgers key={el.id} {...el}/>);
@@ -33,7 +31,6 @@ export const Home = () => {
             search,
             currentPage: String(currentPage),
         }));
-        window.scrollTo(0, 0);
     };
 
     useEffect(() => {

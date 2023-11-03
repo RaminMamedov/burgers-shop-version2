@@ -66,7 +66,8 @@ export const Burgers: React.FC<BurgersType> = ({id, title, price, imageUrl, type
                 <div className="burger-block__price">{`${price} ₽`}</div>
                 <button onClick={onClickAdd} className="button button--outline button--add">
                     <img width="14" height="14" src="https://img.icons8.com/ios-glyphs/30/plus-math.png"
-                         alt="plus-math"/>
+                         alt="plus-math"
+                    />
                     <span>Add</span>
                     {addedCount > 0 && <i>{addedCount}</i>}
                 </button>

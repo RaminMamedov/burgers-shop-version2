@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {CartItem, EmptyCart, ConfirmModal} from "../components";
@@ -11,17 +11,32 @@ import comeBack from '../assets/img/grey-arrow-left.svg';
 const Cart = () => {
     const [isConfirmModalVisible, setConfirmModalVisible] = useState(false);
     const {totalPrice, items} = useSelector(selectCart);
+    const [predictedTotalPrice, setPredictedTotalPrice] = useState(totalPrice);
     const dispatch = useAppDispatch();
     const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+
+    useEffect(() => {
+        setPredictedTotalPrice(totalPrice);
+    }, [totalPrice]);
 
 
     const onClickClear = () => {
         setConfirmModalVisible(true);
     };
 
+    const onCancel = () => {
+        setConfirmModalVisible(false);
+        setPredictedTotalPrice(totalPrice);
+    };
+
     const onConfirmClear = () => {
         dispatch(cartActions.clearItems());
         setConfirmModalVisible(false);
+        setPredictedTotalPrice(totalPrice);
+    };
+
+    const updatePredictedTotalPrice = (amountToRemove: number) => {
+        setPredictedTotalPrice(currentPrice => currentPrice - amountToRemove);
     };
 
     return (
@@ -46,13 +61,13 @@ const Cart = () => {
                         </div>
                         <div className="content__items">
                             {items.map((item: any) => (
-                                <CartItem key={item.id} {...item} />
+                                <CartItem key={item.id} {...item} updatePredictedTotalPrice={updatePredictedTotalPrice}/>
                             ))}
                         </div>
                         <div className="cart__bottom">
                             <div className="cart__bottom-details">
                                 <span> Total burgers: <b>{totalCount} pcs.</b> </span>
-                                <span> Order price: <b>{totalPrice} ₽</b> </span>
+                                <span> Order price: <b>{predictedTotalPrice} ₽</b> </span>
                             </div>
                             <div className="cart__bottom-buttons">
                                 <Link to="/" className="button button--outline button--add go-back-btn">
@@ -70,7 +85,7 @@ const Cart = () => {
             <ConfirmModal
                 isVisible={isConfirmModalVisible}
                 onConfirm={onConfirmClear}
-                onCancel={() => setConfirmModalVisible(false)}
+                onCancel={onCancel}
                 message="Are you sure you want to empty the cart?"
             />
         </>

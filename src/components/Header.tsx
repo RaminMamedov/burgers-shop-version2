@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {Link, useLocation} from "react-router-dom";
-import {Search} from "../components/Search/Search";
+import {Search} from "../components";
 import logo from '../assets/img/burger-logo.svg';
 import {useSelector} from "react-redux";
 import {selectCart} from "../redux/cartSlice/selectCart";

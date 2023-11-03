@@ -8,9 +8,7 @@ import {createActions} from "../../utils/createActions";
 import {handleAsyncServerAppError, handleAsyncServerNetworkError} from "../../utils/error-utils";
 
 
-export const fetchBurgers = createAsyncThunk<Burger[], SearchBurgerParams, ThunkError>(
-    'burger/fetchBurgersStatus',
-    async (params, thunkAPI) => {
+export const fetchBurgers = createAsyncThunk<Burger[], SearchBurgerParams, ThunkError>('burger/fetchBurgersStatus', async (params, thunkAPI) => {
         thunkAPI.dispatch(createActions.setStatus({status: 'loading'}));
         try {
             const { sortBy, order, category, search, currentPage } = params;

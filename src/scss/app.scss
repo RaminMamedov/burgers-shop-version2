@@ -339,7 +339,7 @@ body {
   transform: translate(-50%, -50%);
   width: 300px;
   padding: 20px;
-  background-color: blanchedalmond;
+  background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   border-radius: 8px;
@@ -352,7 +352,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
   }
 
@@ -373,20 +372,8 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
 
-    &:first-child {
-      background-color: beige;
-
-      &:hover {
-        background-color: darken(beige, 10%);
-      }
-    }
-
-    &:last-child {
-      background-color: red;
-
-      &:hover {
-        background-color: lighten(red, 10%);
-      }
+    &:hover {
+      background-color: darken(beige, 10%);
     }
   }
 }
