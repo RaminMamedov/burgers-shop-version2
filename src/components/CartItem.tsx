@@ -1,6 +1,8 @@
+import React, {useState} from "react";
 import {cartActions} from "../redux/cartSlice/cartSlice";
 import {CartItem as CartItemType} from '../redux/cartSlice/cartTypes';
 import {useAppDispatch} from "../customHooks/useAppDispatch";
+import {ConfirmModal} from "../components/ConfirmModal";
 
 type CartItemProps = {
     id: string;
@@ -12,6 +14,7 @@ type CartItemProps = {
 };
 
 export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count, imageUrl}) => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const dispatch = useAppDispatch();
 
     const onClickPlus = () => {
@@ -27,9 +30,16 @@ export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count
     };
 
     const onClickRemove = () => {
-        if (window.confirm('Are you sure you want to remove the item?')) {
-            dispatch(cartActions.removeItem(id));
-        }
+        setIsModalVisible(true);
+    };
+
+    const onConfirmDelete = () => {
+        dispatch(cartActions.removeItem(id));
+        setIsModalVisible(false);
+    };
+
+    const onCancelDelete = () => {
+        setIsModalVisible(false);
     };
 
     return (
@@ -67,6 +77,12 @@ export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count
                     <img width="20" height="20" src="https://img.icons8.com/ios/50/delete-sign--v1.png" alt="delete-sign"/>
                 </button>
             </div>
+            <ConfirmModal
+                onConfirm={onConfirmDelete}
+                onCancel={onCancelDelete}
+                isVisible={isModalVisible}
+                message="Are you sure you want to remove the item?"
+            />
         </div>
     );
 };

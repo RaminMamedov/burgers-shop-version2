@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Link, useLocation} from "react-router-dom";
 import {Search} from "../components/Search/Search";
 import logo from '../assets/img/burger-logo.svg';
@@ -10,8 +10,17 @@ import cartItem from '../assets/img/cart-item.png';
 export const Header = () => {
     const {totalPrice, items} = useSelector(selectCart);
     const location = useLocation();
-
+    const isMounted = useRef(false);
     const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+
+    useEffect(() => {
+        if (isMounted.current) {
+            const json = JSON.stringify(items);
+            localStorage.setItem('cart', json);
+        } else {
+            isMounted.current = true;
+        }
+    }, [items]);
 
     return (
         <div className="header">
@@ -25,7 +34,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </Link>
-                <Search/>
+                {location.pathname !== '/cart' && <Search/>}
                 <div className="header__cart">
                     {location.pathname !== '/cart' && (
                         <Link to='/cart' className="button button--cart">

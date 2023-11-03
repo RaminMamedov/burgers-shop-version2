@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 import {cartActions} from "../../redux/cartSlice/cartSlice";
 import {selectCartItemById} from "../../redux/cartSlice/selectCart";
 import {useAppDispatch} from "../../customHooks/useAppDispatch";
+import {Link} from "react-router-dom";
 
 
 export type BurgersType = {
@@ -40,16 +41,17 @@ export const Burgers: React.FC<BurgersType> = ({id, title, price, imageUrl, type
 
     return (
         <div className="burger-block">
-            <img
-                className="burger-block__image"
-                src={imageUrl}
-                alt="Burger"
-            />
-            <h4 className="burger-block__title">{title}</h4>
+            <Link key={id} to={`/burger/${id}`}>
+                <img className="burger-block__image"
+                    src={imageUrl}
+                    alt="Burger"
+                />
+                <h4 className="burger-block__title">{title}</h4>
+            </Link>
             <div className="burger-block__selector">
                 <ul>
                     {types.map((typeId) => {
-                        return(
+                        return (
                             <li key={typeId}
                                 onClick={() => onClickType(typeId)}
                                 className={activeType === typeId ? "active" : ''}
@@ -63,7 +65,8 @@ export const Burgers: React.FC<BurgersType> = ({id, title, price, imageUrl, type
             <div className="burger-block__bottom">
                 <div className="burger-block__price">{`${price} ₽`}</div>
                 <button onClick={onClickAdd} className="button button--outline button--add">
-                    <img width="14" height="14" src="https://img.icons8.com/ios-glyphs/30/plus-math.png" alt="plus-math"/>
+                    <img width="14" height="14" src="https://img.icons8.com/ios-glyphs/30/plus-math.png"
+                         alt="plus-math"/>
                     <span>Add</span>
                     {addedCount > 0 && <i>{addedCount}</i>}
                 </button>

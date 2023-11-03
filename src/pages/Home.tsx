@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {Categories} from "../components/Categories";
 import {Sort} from "../components/Sort";
 import {BurgersSkeleton} from "../components/Burgers/Burgers-Skeleton";
@@ -40,9 +40,9 @@ export const Home = () => {
         getBurgers();
     }, [categoryId, sort.sortProperty, currentPage, searchValue]);
 
-    const onChangeCategory = (id: number) => {
+    const onChangeCategory = useCallback ((id: number) => {
         dispatch(filterActions.setCategoryId(id))
-    }
+    }, []);
 
     const onChangePage = (number: number) => {
         dispatch(filterActions.setCurrentPage(number))
@@ -54,7 +54,7 @@ export const Home = () => {
                 <Categories categoryId={categoryId}
                             onChangeCategory={onChangeCategory}
                 />
-                <Sort/>
+                <Sort value={sort}/>
             </div>
             <h2 className="content__title">All burgers</h2>
             {status === 'error' ? (

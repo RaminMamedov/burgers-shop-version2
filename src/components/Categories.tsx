@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-type PropsType = {
+type CategoriesType = {
     categoryId: number
     onChangeCategory: (activeCategory: number) => void
 }
 
-export const Categories = (props: PropsType) => {
+export const Categories: React.FC<CategoriesType> = memo(({categoryId, onChangeCategory}) => {
     const categories = ['All', 'Grilled', 'Chicken', 'Beef', 'Fish', 'Vegan'];
     return (
         <div className="categories">
@@ -13,8 +13,8 @@ export const Categories = (props: PropsType) => {
                 {categories.map((value, index) => {
                     return(
                         <li key={index}
-                            onClick={() => props.onChangeCategory(index)}
-                            className={props.categoryId === index ? "active" : ''}
+                            onClick={() => onChangeCategory(index)}
+                            className={categoryId === index ? "active" : ''}
                         >
                             {value}
                         </li>
@@ -23,4 +23,4 @@ export const Categories = (props: PropsType) => {
             </ul>
         </div>
     );
-};
+});

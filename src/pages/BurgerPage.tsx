@@ -7,9 +7,8 @@ type BurgerType = {
     title: string;
     price: number;
 }
-export const BurgerPage = () => {
+const BurgerPage = () => {
     const [burgers, setBurger] = useState<BurgerType | undefined>();
-
     const {id} = useParams();
     const navigate = useNavigate();
 
@@ -43,3 +42,5 @@ export const BurgerPage = () => {
         </div>
     );
 };
+
+export default BurgerPage;
