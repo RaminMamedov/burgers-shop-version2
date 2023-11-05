@@ -32,4 +32,4 @@ Online Burgers Ordering is a modern, user-friendly web application that facilita
 - **Utilities:**
     - [Lodash.Debounce](https://lodash.com/docs/#debounce) - Creates a debounced function that delays invoking `func` until after `wait` milliseconds have elapsed since the last time the debounced function was invoked.
 - **Performance Optimization:**
-    - Code Splitting - A library for creating faster and more reactive apps by tracking why components re-render.
+    - Code Splitting, Tree Shaking, Reexport.

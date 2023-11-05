@@ -11,32 +11,40 @@ type CartItemProps = {
     price: number
     count: number
     imageUrl: string
-    updatePredictedTotalPrice: (amountToRemove: number) => void
+    recalculateTotalPrice: () => void
 };
 
-export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count, imageUrl, updatePredictedTotalPrice}) => {
-    const [isModalVisible, setIsModalVisible] = useState(false);
+export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count, imageUrl, recalculateTotalPrice}) => {
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
     const onClickPlus = () => {
-        dispatch(cartActions.addItem({id} as CartItemType));
+        const itemToAdd: CartItemType = {
+            id,
+            title,
+            type,
+            price,
+            imageUrl,
+            count: 1
+        };
+        dispatch(cartActions.addItem(itemToAdd));
     };
 
     const onClickMinus = () => {
-        dispatch(cartActions.minusItem(id));
+        dispatch(cartActions.minusItem({id, type}));
     };
 
     const onClickRemove = () => {
-        updatePredictedTotalPrice(price * count);
         setIsModalVisible(true);
     };
 
     const onConfirmDelete = () => {
-        dispatch(cartActions.removeItem(id));
+        dispatch(cartActions.removeItem({id, type}));
         setIsModalVisible(false);
     };
 
     const onCancelDelete = () => {
+        recalculateTotalPrice();
         setIsModalVisible(false);
     };
 
@@ -47,21 +55,18 @@ export const CartItem: React.FC<CartItemProps> = ({id, title, type, price, count
             </div>
             <div className="cart__item-info">
                 <h3>{title}</h3>
-                <p>
-                    {type}
-                </p>
+                <p>{type}</p>
             </div>
             <div className="cart__item-count">
-                <button
-                    disabled={count === 1}
-                    onClick={onClickMinus}
-                    className="button button--outline button--circle cart__item-count-minus">
+                <button disabled={count === 1}
+                        onClick={onClickMinus}
+                        className="button button--outline button--circle cart__item-count-minus">
                     <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/minus.png" alt="minus"/>
                 </button>
                 <b>{count}</b>
-                <button
-                    onClick={onClickPlus}
-                    className="button button--outline button--circle cart__item-count-plus">
+                <button onClick={onClickPlus}
+                        className="button button--outline button--circle cart__item-count-plus"
+                >
                     <img width="20" height="20" src="https://img.icons8.com/android/24/plus.png" alt="plus"/>
                 </button>
             </div>

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import {cartActions} from "../../redux/cartSlice/cartSlice";
-import {selectCartItemById} from "../../redux/cartSlice/selectCart";
+import {selectCartItemByIdAndType} from "../../redux/cartSlice/selectCart";
 import {useAppDispatch} from "../../customHooks/useAppDispatch";
 import {Link} from "react-router-dom";
+import {RootStateType} from "../../redux/store";
 
 
 export type BurgersType = {
@@ -15,11 +16,11 @@ export type BurgersType = {
     rating: number;
 };
 
-const burgerTypes = ['medium', 'well-done'];
+const burgersTypes = ['medium', 'well-done'];
 
 export const Burgers: React.FC<BurgersType> = ({id, title, price, imageUrl, types}) => {
     const [activeType, setActiveType] = useState<number>(0);
-    const cartItem = useSelector(selectCartItemById(id));
+    const cartItem = useSelector((state: RootStateType) => selectCartItemByIdAndType(state, id, burgersTypes[activeType]));
     const dispatch = useAppDispatch();
     const addedCount = cartItem ? cartItem.count : 0;
 
@@ -29,7 +30,7 @@ export const Burgers: React.FC<BurgersType> = ({id, title, price, imageUrl, type
             title,
             price,
             imageUrl,
-            type: burgerTypes[activeType],
+            type: burgersTypes[activeType],
             count: 0,
         };
         dispatch(cartActions.addItem(item));
@@ -50,13 +51,13 @@ export const Burgers: React.FC<BurgersType> = ({id, title, price, imageUrl, type
             </Link>
             <div className="burger-block__selector">
                 <ul>
-                    {types.map((typeId) => {
+                    {types.map((typeId: number) => {
                         return (
                             <li key={typeId}
                                 onClick={() => onClickType(typeId)}
                                 className={activeType === typeId ? "active" : ''}
                             >
-                                {burgerTypes[typeId]}
+                                {burgersTypes[typeId]}
                             </li>
                         )
                     })}

@@ -6,12 +6,13 @@ import {cartActions} from "../redux/cartSlice/cartSlice";
 import {selectCart} from "../redux/cartSlice/selectCart";
 import {useAppDispatch} from "../customHooks/useAppDispatch";
 import comeBack from '../assets/img/grey-arrow-left.svg';
+import {calcTotalPrice} from "../utils/calcTotalPrice";
 
 
 const Cart = () => {
-    const [isConfirmModalVisible, setConfirmModalVisible] = useState(false);
+    const [isConfirmModalVisible, setConfirmModalVisible] = useState<boolean>(false);
     const {totalPrice, items} = useSelector(selectCart);
-    const [predictedTotalPrice, setPredictedTotalPrice] = useState(totalPrice);
+    const [predictedTotalPrice, setPredictedTotalPrice] = useState<number>(totalPrice);
     const dispatch = useAppDispatch();
     const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
 
@@ -35,8 +36,8 @@ const Cart = () => {
         setPredictedTotalPrice(totalPrice);
     };
 
-    const updatePredictedTotalPrice = (amountToRemove: number) => {
-        setPredictedTotalPrice(currentPrice => currentPrice - amountToRemove);
+    const recalculateTotalPrice = () => {
+        setPredictedTotalPrice(calcTotalPrice(items));
     };
 
     return (
@@ -61,7 +62,9 @@ const Cart = () => {
                         </div>
                         <div className="content__items">
                             {items.map((item: any) => (
-                                <CartItem key={item.id} {...item} updatePredictedTotalPrice={updatePredictedTotalPrice}/>
+                                <CartItem key={item.id} {...item}
+                                          recalculateTotalPrice={recalculateTotalPrice}
+                                />
                             ))}
                         </div>
                         <div className="cart__bottom">
@@ -74,9 +77,9 @@ const Cart = () => {
                                     <img src={comeBack} alt={'comeBack'}/>
                                     <span>Come back</span>
                                 </Link>
-                                <div className="button pay-btn">
+                                <button className="button pay-btn">
                                     <span>Pay now</span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>

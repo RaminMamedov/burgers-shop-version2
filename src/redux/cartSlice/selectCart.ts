@@ -2,5 +2,6 @@ import { RootStateType } from '../store';
 
 export const selectCart = (state: RootStateType) => state.cartReducer;
 
-export const selectCartItemById = (id: string) => (state: RootStateType) =>
-    state.cartReducer.items.find((obj) => obj.id === id);
+export const selectCartItemByIdAndType = (state: RootStateType, id: string, type: string) =>
+    state.cartReducer.items.find(item => item.id === id && item.type === type);
+
