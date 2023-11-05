@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/burgers-shop-version2/static/css/main.a5a5a2f4.css",
-    "main.js": "/burgers-shop-version2/static/js/main.b265356b.js",
+    "main.css": "/burgers-shop-version2/static/css/main.b75c619c.css",
+    "main.js": "/burgers-shop-version2/static/js/main.9114fca6.js",
     "BurgerPage.js": "/burgers-shop-version2/static/js/BurgerPage.f4af70b6.chunk.js",
     "NotFound.css": "/burgers-shop-version2/static/css/NotFound.0f7a8873.chunk.css",
     "NotFound.js": "/burgers-shop-version2/static/js/NotFound.331f468a.chunk.js",
-    "Cart.js": "/burgers-shop-version2/static/js/Cart.66d0d7b4.chunk.js",
+    "Cart.js": "/burgers-shop-version2/static/js/Cart.c8ca1e13.chunk.js",
     "static/js/787.15ddc0cf.chunk.js": "/burgers-shop-version2/static/js/787.15ddc0cf.chunk.js",
     "static/media/empty-cart.png": "/burgers-shop-version2/static/media/empty-cart.db905d1f4b063162f25b.png",
     "static/media/404.svg": "/burgers-shop-version2/static/media/404.dae7af4892f2a3abe805a174178919f2.svg",
@@ -14,16 +14,16 @@
     "static/media/search.svg": "/burgers-shop-version2/static/media/search.aa58904ba67757220d24545b21a52e61.svg",
     "static/media/clear.svg": "/burgers-shop-version2/static/media/clear.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "static/media/grey-arrow-left.svg": "/burgers-shop-version2/static/media/grey-arrow-left.7829119cd62b4e2b3fddcff288da2b8f.svg",
-    "main.a5a5a2f4.css.map": "/burgers-shop-version2/static/css/main.a5a5a2f4.css.map",
-    "main.b265356b.js.map": "/burgers-shop-version2/static/js/main.b265356b.js.map",
+    "main.b75c619c.css.map": "/burgers-shop-version2/static/css/main.b75c619c.css.map",
+    "main.9114fca6.js.map": "/burgers-shop-version2/static/js/main.9114fca6.js.map",
     "BurgerPage.f4af70b6.chunk.js.map": "/burgers-shop-version2/static/js/BurgerPage.f4af70b6.chunk.js.map",
     "NotFound.0f7a8873.chunk.css.map": "/burgers-shop-version2/static/css/NotFound.0f7a8873.chunk.css.map",
     "NotFound.331f468a.chunk.js.map": "/burgers-shop-version2/static/js/NotFound.331f468a.chunk.js.map",
-    "Cart.66d0d7b4.chunk.js.map": "/burgers-shop-version2/static/js/Cart.66d0d7b4.chunk.js.map",
+    "Cart.c8ca1e13.chunk.js.map": "/burgers-shop-version2/static/js/Cart.c8ca1e13.chunk.js.map",
     "787.15ddc0cf.chunk.js.map": "/burgers-shop-version2/static/js/787.15ddc0cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5a5a2f4.css",
-    "static/js/main.b265356b.js"
+    "static/css/main.b75c619c.css",
+    "static/js/main.9114fca6.js"
   ]
 }
