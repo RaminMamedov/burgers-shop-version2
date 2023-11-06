@@ -8,12 +8,12 @@ import {RootStateType} from "../../redux/store";
 
 
 export type BurgersType = {
-    id: string;
-    title: string;
-    price: number;
-    imageUrl: string;
-    types: number[];
-    rating: number;
+    id: string
+    title: string
+    price: number
+    imageUrl: string
+    types: number[]
+    rating: number
 };
 
 const burgersTypes = ['medium', 'well-done'];

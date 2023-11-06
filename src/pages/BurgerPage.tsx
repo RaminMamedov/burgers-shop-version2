@@ -6,6 +6,7 @@ type BurgerType = {
     imageUrl: string;
     title: string;
     price: number;
+    description: string;
 }
 const BurgerPage = () => {
     const [burgers, setBurger] = useState<BurgerType | undefined>();
@@ -18,7 +19,6 @@ const BurgerPage = () => {
                 const { data } = await axios.get('https://650ab691dfd73d1fab08bfd5.mockapi.io/items/' + id);
                 setBurger(data);
             } catch (error) {
-                alert('Error when receiving burger!');
                 navigate('/');
             }
         }
@@ -26,19 +26,27 @@ const BurgerPage = () => {
     }, []);
 
     if (!burgers) {
-        return <>Loading...</>;
+        return (
+            <div className="loader-container">
+                <div className="loader"></div>
+            </div>
+        )
     }
 
     return (
-        <div className="container">
-            <img className="burger-block__image" src={burgers.imageUrl} alt={'burger'}/>
-            <h2>{burgers.title}</h2>
-            <h4>{burgers.price} ₽</h4>
-            <Link to="/">
-                <button className="button button--outline button--add">
-                    <span>Back</span>
-                </button>
-            </Link>
+        <div className="burger-page">
+            <img className="burger-page__image" src={burgers.imageUrl} alt={'burger'}/>
+            <h2 className="burger-page__title">Description:</h2>
+            <p className="burger-page__description">{burgers.description}</p>
+            <div className="burger-page__bottom">
+                <h2>{burgers.title}</h2>
+                <h4>{burgers.price} ₽</h4>
+                <Link to="/">
+                    <button className="button button--outline button--add">
+                        <span>Back</span>
+                    </button>
+                </Link>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-export type CartItem = {
+export type CartItemType = {
     id: string;
     title: string;
     price: number;
@@ -9,5 +9,5 @@ export type CartItem = {
 
 export type CartSliceState = {
     totalPrice: number;
-    items: CartItem[];
+    items: CartItemType[];
 }

@@ -11,13 +11,19 @@ const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ './pages/Cart'));
 function App() {
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback=
+                      {
+                          <div className="loader-container">
+                              <div className="loader"></div>
+                          </div>
+                      }
+        >
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route path={'/burgers-shop-version2/'} element={<Home/>}/>
                     <Route index element={<Home/>}/>
                     <Route path={'/burger/:id'} element={<BurgerPage/>}/>
-                    <Route path={'/cart'} element={<Cart />}/>
+                    <Route path={'/cart'} element={<Cart/>}/>
                     <Route path={'/*'} element={<NotFound/>}/>
                 </Route>
             </Routes>

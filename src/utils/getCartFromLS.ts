@@ -1,4 +1,4 @@
-import {CartItem} from "../redux/cartSlice/cartTypes";
+import {CartItemType} from "../redux/cartSlice/cartTypes";
 import {calcTotalPrice} from "../utils/calcTotalPrice";
 
 
@@ -8,7 +8,7 @@ export const getCartFromLS = () => {
   const totalPrice = calcTotalPrice(items);
 
   return {
-    items: items as CartItem[],
+    items: items as CartItemType[],
     totalPrice,
   };
 };

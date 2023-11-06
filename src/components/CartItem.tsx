@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {cartActions} from "../redux/cartSlice/cartSlice";
-import {CartItem as CartItemType} from '../redux/cartSlice/cartTypes';
 import {useAppDispatch} from "../customHooks/useAppDispatch";
 import {ConfirmModal} from "../components";
+import {CartItemType} from "../redux/cartSlice/cartTypes";
 
 type CartItemProps = {
     id: string

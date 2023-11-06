@@ -7,6 +7,7 @@ import {selectCart} from "../redux/cartSlice/selectCart";
 import {useAppDispatch} from "../customHooks/useAppDispatch";
 import comeBack from '../assets/img/grey-arrow-left.svg';
 import {calcTotalPrice} from "../utils/calcTotalPrice";
+import {CartItemType} from "../redux/cartSlice/cartTypes";
 
 
 const Cart = () => {
@@ -14,7 +15,7 @@ const Cart = () => {
     const {totalPrice, items} = useSelector(selectCart);
     const [predictedTotalPrice, setPredictedTotalPrice] = useState<number>(totalPrice);
     const dispatch = useAppDispatch();
-    const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+    const totalCount = items.reduce((sum: number, item: CartItemType) => sum + item.count, 0);
 
     useEffect(() => {
         setPredictedTotalPrice(totalPrice);
@@ -61,7 +62,7 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className="content__items">
-                            {items.map((item: any) => (
+                            {items.map((item: CartItemType) => (
                                 <CartItem key={item.id} {...item}
                                           recalculateTotalPrice={recalculateTotalPrice}
                                 />
