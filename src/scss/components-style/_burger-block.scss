@@ -8,6 +8,7 @@
 
   &__image {
     width: 260px;
+    border: orange solid 3px;
 
     @media (max-width: 420px) {
       width: 200px;
@@ -91,15 +92,18 @@
 
   &__image {
     max-width: 300px;
+    border: orange solid 3px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 370px) {
+      max-width: 270px;
     }
   }
 
   &__title, &__description {
-    margin: 0;
     font-size: 22px;
     letter-spacing: 0.1em;
+    display: flex;
+    max-width: 500px;
   }
 
   &__title {
@@ -107,7 +111,7 @@
   }
 
   &__description {
-    flex-grow: 1;
+
   }
 
   &__bottom {
@@ -131,12 +135,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Занимает весь видимый экран */
+  height: 100vh;
 }
 
 .loader {
-  border: 5px solid #f3f3f3; /* Цвет фона */
-  border-top: 5px solid #3498db; /* Цвет крутилки */
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
   border-radius: 50%;
   width: 50px;
   height: 50px;
