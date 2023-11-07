@@ -5,12 +5,13 @@ export type Burger = {
   imageUrl: string;
   types: number[];
   rating: number;
+  description: string
 };
 
 export enum Status {
-  LOADING = 'loading',
-  SUCCESS = 'completed',
-  ERROR = 'error',
+  LOADING = "loading",
+  SUCCESS = "completed",
+  ERROR = "error",
 }
 
 export type SearchBurgerParams = {
@@ -24,4 +25,5 @@ export type SearchBurgerParams = {
 export interface BurgerSliceState {
   items: Burger[];
   status: Status;
+  currentBurger: Burger| null;
 }

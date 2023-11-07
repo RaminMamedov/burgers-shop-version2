@@ -1,5 +1,5 @@
-@import 'src/scss/variables';
-@import 'src/scss/libs/normalize';
+@import "src/scss/variables";
+@import "src/scss/libs/normalize";
 
 .burger-block {
   width: 270px;
@@ -32,7 +32,7 @@
 
   &__selector {
     display: flex;
-    background-color: #F9F4FB;
+    background-color: #f9f4fb;
     border-radius: 10px;
     padding: 6px;
 
@@ -99,7 +99,8 @@
     }
   }
 
-  &__title, &__description {
+  &__title,
+  &__description {
     font-size: 22px;
     letter-spacing: 0.1em;
     display: flex;
@@ -111,7 +112,6 @@
   }
 
   &__description {
-
   }
 
   &__bottom {
@@ -125,7 +125,8 @@
       order: 3;
     }
 
-    h2, h4 {
+    h2,
+    h4 {
       text-align: center;
     }
   }
@@ -148,8 +149,10 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
-

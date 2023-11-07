@@ -1,54 +1,51 @@
-import React, {useEffect, useState} from 'react';
-import {Link, useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectBurgers } from "../redux/burgersSlice/selectBurgers";
+import { fetchBurgerById } from "../redux/burgersSlice/asyncActionsBurger";
+import { useAppDispatch } from "../customHooks/useAppDispatch";
+import { Status } from "../redux/burgersSlice/burgerTypes";
+import { Loader } from "../components/Loader";
 
-type BurgerType = {
-    imageUrl: string;
-    title: string;
-    price: number;
-    description: string;
-}
 const BurgerPage = () => {
-    const [burgers, setBurger] = useState<BurgerType | undefined>();
-    const {id} = useParams();
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { currentBurger, status } = useSelector(selectBurgers);
 
-    useEffect(() => {
-        async function fetchBurgers() {
-            try {
-                const { data } = await axios.get('https://650ab691dfd73d1fab08bfd5.mockapi.io/items/' + id);
-                setBurger(data);
-            } catch (error) {
-                navigate('/');
-            }
-        }
-        fetchBurgers();
-    }, []);
-
-    if (!burgers) {
-        return (
-            <div className="loader-container">
-                <div className="loader"></div>
-            </div>
-        )
+  useEffect(() => {
+    if (id) {
+      dispatch(fetchBurgerById(id));
     }
+  }, [id, dispatch]);
 
-    return (
-        <div className="burger-page">
-            <img className="burger-page__image" src={burgers.imageUrl} alt={'burger'}/>
-            <h2 className="burger-page__title">Description:</h2>
-            <p className="burger-page__description">{burgers.description}</p>
-            <div className="burger-page__bottom">
-                <h2>{burgers.title}</h2>
-                <h4>{burgers.price} ₽</h4>
-                <Link to="/">
-                    <button className="button button--outline button--add">
-                        <span>Back</span>
-                    </button>
-                </Link>
-            </div>
-        </div>
-    );
+  useEffect(() => {
+    if (status === Status.ERROR) {
+      navigate("/");
+    }
+  }, [status, navigate]);
+
+
+  if (!currentBurger) {
+    return (<Loader/>)
+  }
+
+  return (
+    <div className="burger-page">
+      <img className="burger-page__image" src={currentBurger.imageUrl} alt={"burger"} />
+      <h2 className="burger-page__title">Description:</h2>
+      <p className="burger-page__description">{currentBurger.description}</p>
+      <div className="burger-page__bottom">
+        <h2>{currentBurger.title}</h2>
+        <h4>{currentBurger.price} ₽</h4>
+        <Link to="/">
+          <button className="button button--outline button--add">
+            <span>Back</span>
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default BurgerPage;

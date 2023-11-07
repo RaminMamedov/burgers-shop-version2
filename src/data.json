@@ -1,119 +1,94 @@
 {
-    "burgers": [
-        {
-            "id": "0",
-            "imageUrl": "https://mcdonalds.az/images/36e04d7fca426a5e7a4ad922a0041f8e.png",
-            "title": "Ranger-Burger",
-            "category": 1,
-            "types": [
-                0,
-                1
-            ],
-            "price": 300,
-            "rating": 3,
-            "description": "100% beef patty, melted cheddar cheese, fresh onions, cucumber, tomato, fresh Iceberg lettuce and special sauce on a caramelized bun with sesame."
-        },
-        {
-            "id": "1",
-            "imageUrl": "https://mcdonalds.az/images/7e2ebc7f8f56fbb9ea6374b5d7ad55e3.png",
-            "title": "Hamburger",
-            "category": 3,
-            "types": [
-                0,
-                1
-            ],
-            "price": 350,
-            "rating": 5,
-            "description": "Burger made of a 100% pure beef patty, onions, pickles and just the right amount of mustard and ketchup wrapped in a caramelized bun."
-        },
-        {
-            "id": "2",
-            "imageUrl": "https://mcdonalds.az/images/50ef4c34b8e6389e1055bdcf9c74a823.png",
-            "title": "Fish-Burger",
-            "category": 4,
-            "types": [
-                0,
-                1
-            ],
-            "price": 400,
-            "rating": 3,
-            "description": "Fried, breaded crispy fish fillet served on a bun, with fresh Iceberg lettuce, special sauce and sliced tomato."
-        },
-        {
-            "id": "3",
-            "imageUrl": "https://mcdonalds.az/images/afa4b44cdad58e8e48e825e682dd5bae.png",
-            "title": "Chicken-Burger",
-            "category": 2,
-            "types": [
-                0,
-                1
-            ],
-            "price": 450,
-            "rating": 5,
-            "description": "Fried, crispy chicken fillet served on a caramelized bun, with fresh Iceberg lettuce, special sauce, tomato and sliced cucumber."
-        },
-        {
-            "id": "4",
-            "imageUrl": "https://mcdonalds.az/images/4e4af6b5506f1a3524f34301ad632fce.png",
-            "title": "Vegan-Burger",
-            "category": 5,
-            "types": [
-                0
-            ],
-            "price": 500,
-            "rating": 3,
-            "description": "Join us to savor our Ultimate Vegan Burger, featuring a crispy plant-based patty topped with dairy-free cheese and a tangy vegan tartar sauce, all nestled within a freshly toasted bun."
-        },
-        {
-            "id": "5",
-            "imageUrl": "https://mcdonalds.az/images/f2ec04b4074f5c4dde9e33149648cfbf.png",
-            "title": "Vegan-Paradise",
-            "category": 5,
-            "types": [
-                0
-            ],
-            "price": 400,
-            "rating": 3,
-            "description": "Join us to savor our Ultimate Vegan Burger, featuring a crispy plant-based patty topped with dairy-free cheese and a tangy vegan tartar sauce, all nestled within a freshly toasted bun."
-        },
-        {
-            "id": "6",
-            "imageUrl": "https://mcdonalds.az/images/eb02fdcd1e6fc5a0bdfae04a73cfaadc.png",
-            "title": "MacChicken",
-            "category": 2,
-            "types": [
-                0,
-                1
-            ],
-            "price": 350,
-            "rating": 5,
-            "description": "100% chicken breast fillet in a crispy, crunchy coating. Served with iceberg lettuce, ranch sauce and sesame topped bun."
-        },
-        {
-            "id": "7",
-            "imageUrl": "https://mcdonalds.az/images/4a16e2cfa8dd7418b841019600ceb785.png",
-            "title": "Rocket-Chicken",
-            "category": 2,
-            "types": [
-                0,
-                1
-            ],
-            "price": 600,
-            "rating": 5,
-            "description": "Chicken patty, 3 pieces Emmental cheeses, onions, juicy tomatoes and Grill sauce all nestled in a caramelized bun with sesame."
-        },
-        {
-            "id": "8",
-            "imageUrl": "https://mcdonalds.az/images/8910b43241f23679d86e379346e3cbf7.png",
-            "title": "Beef-King",
-            "category": 3,
-            "types": [
-                0,
-                1
-            ],
-            "price": 550,
-            "rating": 5,
-            "description": "It's two 100% beef patties, 1 melted Cheddar cheese, onions, pickles, Iceberg lettuce and special sauce that make the Big Mac a special bun with sesame."
-        }
-    ]
+  "burgers": [
+    {
+      "id": "0",
+      "imageUrl": "https://mcdonalds.az/images/36e04d7fca426a5e7a4ad922a0041f8e.png",
+      "title": "Ranger-Burger",
+      "category": 1,
+      "types": [0, 1],
+      "price": 300,
+      "rating": 3,
+      "description": "100% beef patty, melted cheddar cheese, fresh onions, cucumber, tomato, fresh Iceberg lettuce and special sauce on a caramelized bun with sesame."
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://mcdonalds.az/images/7e2ebc7f8f56fbb9ea6374b5d7ad55e3.png",
+      "title": "Hamburger",
+      "category": 3,
+      "types": [0, 1],
+      "price": 350,
+      "rating": 5,
+      "description": "Burger made of a 100% pure beef patty, onions, pickles and just the right amount of mustard and ketchup wrapped in a caramelized bun."
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://mcdonalds.az/images/50ef4c34b8e6389e1055bdcf9c74a823.png",
+      "title": "Fish-Burger",
+      "category": 4,
+      "types": [0, 1],
+      "price": 400,
+      "rating": 3,
+      "description": "Fried, breaded crispy fish fillet served on a bun, with fresh Iceberg lettuce, special sauce and sliced tomato."
+    },
+    {
+      "id": "3",
+      "imageUrl": "https://mcdonalds.az/images/afa4b44cdad58e8e48e825e682dd5bae.png",
+      "title": "Chicken-Burger",
+      "category": 2,
+      "types": [0, 1],
+      "price": 450,
+      "rating": 5,
+      "description": "Fried, crispy chicken fillet served on a caramelized bun, with fresh Iceberg lettuce, special sauce, tomato and sliced cucumber."
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://mcdonalds.az/images/4e4af6b5506f1a3524f34301ad632fce.png",
+      "title": "Vegan-Burger",
+      "category": 5,
+      "types": [0],
+      "price": 500,
+      "rating": 3,
+      "description": "Join us to savor our Ultimate Vegan Burger, featuring a crispy plant-based patty topped with dairy-free cheese and a tangy vegan tartar sauce, all nestled within a freshly toasted bun."
+    },
+    {
+      "id": "5",
+      "imageUrl": "https://mcdonalds.az/images/f2ec04b4074f5c4dde9e33149648cfbf.png",
+      "title": "Vegan-Paradise",
+      "category": 5,
+      "types": [0],
+      "price": 400,
+      "rating": 3,
+      "description": "Join us to savor our Ultimate Vegan Burger, featuring a crispy plant-based patty topped with dairy-free cheese and a tangy vegan tartar sauce, all nestled within a freshly toasted bun."
+    },
+    {
+      "id": "6",
+      "imageUrl": "https://mcdonalds.az/images/eb02fdcd1e6fc5a0bdfae04a73cfaadc.png",
+      "title": "MacChicken",
+      "category": 2,
+      "types": [0, 1],
+      "price": 350,
+      "rating": 5,
+      "description": "100% chicken breast fillet in a crispy, crunchy coating. Served with iceberg lettuce, ranch sauce and sesame topped bun."
+    },
+    {
+      "id": "7",
+      "imageUrl": "https://mcdonalds.az/images/4a16e2cfa8dd7418b841019600ceb785.png",
+      "title": "Rocket-Chicken",
+      "category": 2,
+      "types": [0, 1],
+      "price": 600,
+      "rating": 5,
+      "description": "Chicken patty, 3 pieces Emmental cheeses, onions, juicy tomatoes and Grill sauce all nestled in a caramelized bun with sesame."
+    },
+    {
+      "id": "8",
+      "imageUrl": "https://mcdonalds.az/images/8910b43241f23679d86e379346e3cbf7.png",
+      "title": "Beef-King",
+      "category": 3,
+      "types": [0, 1],
+      "price": 550,
+      "rating": 5,
+      "description": "It's two 100% beef patties, 1 melted Cheddar cheese, onions, pickles, Iceberg lettuce and special sauce that make the Big Mac a special bun with sesame."
+    }
+  ]
 }

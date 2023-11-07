@@ -1,15 +1,17 @@
-@import 'src/scss/variables';
-@import 'src/scss/libs/normalize';
+@import "src/scss/variables";
+@import "src/scss/libs/normalize";
 
 .button {
   display: inline-block;
-  background-color: #C3894B;
+  background-color: #c3894b;
   border-radius: 30px;
   padding: 10px 20px;
   min-width: 100px;
   text-align: center;
   cursor: pointer;
-  transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
+  transition:
+    background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
   border: 1px solid transparent;
   @include noselect();
 
@@ -26,11 +28,11 @@
   }
 
   &:hover {
-    background-color: #C3894B;
+    background-color: #c3894b;
   }
 
   &:active {
-    background-color: #C3894B;
+    background-color: #c3894b;
     transform: translateY(1px);
   }
 
@@ -69,7 +71,7 @@
     }
 
     &:hover {
-      background-color: #C3894B;
+      background-color: #c3894b;
 
       &,
       span {
@@ -84,7 +86,7 @@
     }
 
     &:active {
-      background-color: #C3894B;
+      background-color: #c3894b;
     }
   }
 
@@ -109,14 +111,14 @@
     &:hover {
       i {
         background-color: #fff;
-        color: #C3894B;
+        color: #c3894b;
       }
     }
 
     i {
       display: inline-block;
       border-radius: 30px;
-      background-color: #C3894B;
+      background-color: #c3894b;
       color: #fff;
       font-weight: 600;
       width: 22px;

@@ -1,13 +1,12 @@
-@import 'src/scss/variables';
+@import "src/scss/variables";
 
 .header {
   padding: 40px 0;
   background-color: blanchedalmond;
 
-  @media (max-width: 375px) {
+  @media (max-width: 770px) {
     padding: 10px 0;
   }
-
 
   .container {
     display: flex;
@@ -38,7 +37,6 @@
       }
     }
   }
-
 
   &__logo {
     display: flex;

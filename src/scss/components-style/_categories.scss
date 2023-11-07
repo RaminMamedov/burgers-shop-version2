@@ -1,12 +1,12 @@
-@import 'src/scss/variables';
-@import 'src/scss/libs/normalize';
+@import "src/scss/variables";
+@import "src/scss/libs/normalize";
 
 .categories {
   ul {
     display: flex;
 
     li {
-      background-color: #F9F4FB;
+      background-color: #f9f4fb;
       padding: 13px 30px;
       border-radius: 30px;
       margin-right: 10px;
@@ -18,7 +18,7 @@
 
       @media (any-hover: hover) {
         &:hover {
-          background-color: #C3894B;
+          background-color: #c3894b;
         }
       }
 
