@@ -79,23 +79,94 @@
   }
 }
 
+//.burger-page {
+//  display: flex;
+//  flex-direction: row;
+//  align-items: flex-start;
+//  gap: 20px;
+//
+//  @media (max-width: 1100px) {
+//    flex-direction: column;
+//    align-items: center;
+//  }
+//
+//  &__image {
+//    max-width: 300px;
+//    border: orange solid 3px;
+//
+//    @media (max-width: 370px) {
+//      max-width: 270px;
+//    }
+//  }
+//
+//  &__title,
+//  &__description {
+//    font-size: 22px;
+//    letter-spacing: 0.1em;
+//    display: flex;
+//    max-width: 500px;
+//  }
+//
+//  &__title {
+//    align-self: flex-start;
+//  }
+//
+//  &__description {
+//  }
+//
+//  &__bottom {
+//    width: 100%;
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
+//    gap: 10px;
+//
+//    @media (max-width: 768px) {
+//      order: 3;
+//    }
+//
+//    h2,
+//    h4 {
+//      text-align: center;
+//    }
+//  }
+//}
+
+
 .burger-page {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 20px;
+  max-width: 100%;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
 
-  &__image {
-    max-width: 300px;
-    border: orange solid 3px;
+  &__imageblock {
+    max-width: 350px;
 
     @media (max-width: 370px) {
       max-width: 270px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border: orange solid 3px;
+    flex: 0 0 auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 400px);
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 
@@ -103,34 +174,35 @@
   &__description {
     font-size: 22px;
     letter-spacing: 0.1em;
-    display: flex;
     max-width: 500px;
   }
 
   &__title {
     align-self: flex-start;
+    margin-bottom: 0;
   }
 
   &__description {
+    align-self: flex-start;
   }
 
   &__bottom {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    @media (max-width: 768px) {
-      order: 3;
-    }
+    align-items: flex-start;
 
     h2,
     h4 {
-      text-align: center;
+      text-align: left;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 }
+
 
 .loader-container {
   display: flex;

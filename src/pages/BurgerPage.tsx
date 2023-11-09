@@ -13,6 +13,7 @@ const BurgerPage = () => {
   const dispatch = useAppDispatch();
   const { currentBurger, status } = useSelector(selectBurgers);
 
+
   useEffect(() => {
     if (id) {
       dispatch(fetchBurgerById(id));
@@ -32,12 +33,16 @@ const BurgerPage = () => {
 
   return (
     <div className="burger-page">
-      <img className="burger-page__image" src={currentBurger.imageUrl} alt={"burger"} />
-      <h2 className="burger-page__title">Description:</h2>
-      <p className="burger-page__description">{currentBurger.description}</p>
-      <div className="burger-page__bottom">
+      <div className="burger-page__imageblock">
+        <img className="burger-page__image" src={currentBurger.imageUrl} alt={"burger"} />
         <h2>{currentBurger.title}</h2>
         <h4>{currentBurger.price} ₽</h4>
+      </div>
+      <div className="burger-page__info">
+        <h2 className="burger-page__title">Description:</h2>
+        <p className="burger-page__description">{currentBurger.description}</p>
+      </div>
+      <div className="burger-page__bottom">
         <Link to="/">
           <button className="button button--outline button--add">
             <span>Back</span>

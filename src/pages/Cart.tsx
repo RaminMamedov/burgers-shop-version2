@@ -85,9 +85,9 @@ const Cart = () => {
                   <img src={comeBack} alt={"comeBack"} />
                   <span>Come back</span>
                 </Link>
-                <button className="button pay-btn">
+                <Link to="/payment" className="button pay-btn">
                   <span>Pay now</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@ export type BurgersType = {
   rating: number;
 };
 
-const burgersTypes = ["medium", "well-done"];
+export const burgersTypes = ["medium", "well-done"];
 
 export const Burgers: React.FC<BurgersType> = ({ id, title, price, imageUrl, types }) => {
   const [activeType, setActiveType] = useState<number>(0);
