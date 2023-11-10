@@ -7,6 +7,7 @@ import { ThunkError } from "../../utils/types";
 import { createActions } from "../../utils/createActions";
 import { handleAsyncServerAppError, handleAsyncServerNetworkError } from "../../utils/error-utils";
 
+
 export const fetchBurgers = createAsyncThunk<Burger[], SearchBurgerParams, ThunkError>(
   "burger/fetchBurgersStatus",
   async (params, thunkAPI) => {

@@ -42,7 +42,6 @@ const PaymentPage = () => {
       newValue = value.replace(/\D/g, '').slice(0, 3);
     } else if (name === 'expiryDate') {
       newValue = value.replace(/[^\d/]/g, '').replace(/(\d{2})(\d)/, '$1/$2').slice(0, 5);
-
       if (value.length < paymentInfo.expiryDate.length && paymentInfo.expiryDate.endsWith('/')) {
         newValue = newValue.slice(0, -1);
       }
