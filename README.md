@@ -6,7 +6,6 @@ The Online Burgers Ordering Web App is a cutting-edge platform for hassle-free b
 
 - A wide range of burger options to choose from.
 - User-friendly interface for a simplified ordering process.
-- Real-time order tracking.
 
 ## Tech Stack
 
